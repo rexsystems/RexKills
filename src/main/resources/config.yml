@@ -1,0 +1,113 @@
+# RexKills configuration
+# Messages accept MiniMessage, legacy & codes, &#RRGGBB, and #RRGGBB.
+# Inserted names ({player}, {killer}, {weapon}) are literal. Color belongs in the template.
+
+config-version: 1
+
+settings:
+  enabled: true
+  # all, world, radius, involved, victim, killer
+  # radius, world, involved, victim, and killer always replace the vanilla broadcast.
+  audience: all
+  # Blocks. 0 with audience radius uses the whole world. Values above 256 are clamped.
+  radius: 64
+  # false keeps the vanilla chat line when audience is all.
+  cancel-vanilla: true
+  # Paper builds that have a death screen can use keep, custom, or hide.
+  death-screen: keep
+  vanilla-death-sound: true
+  # When true, only players with rexkills.custom get a custom message.
+  require-permission: false
+  # {player} and {killer} use the display name instead of the account name.
+  use-display-name: false
+
+worlds:
+  # If this list is not empty, custom messages run only in these worlds.
+  enabled: []
+  disabled: []
+
+sound:
+  enabled: false
+  # Empty name disables the sound. Bukkit sound names, for example ENTITY_PLAYER_DEATH.
+  sound: ENTITY_PLAYER_DEATH
+  volume: 1.0
+  pitch: 1.0
+  to: victim
+
+title:
+  enabled: false
+  # Times are ticks. 20 ticks is one second.
+  title: "<red>You died"
+  subtitle: "<gray>{killer}"
+  fade-in: 10
+  stay: 40
+  fade-out: 10
+  to: victim
+
+actionbar:
+  enabled: false
+  text: "<gray>You died"
+  to: victim
+
+bossbar:
+  enabled: false
+  text: "<red>{player} <gray>died"
+  # PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE
+  color: RED
+  # SOLID, SEGMENTED_6, SEGMENTED_10, SEGMENTED_12, SEGMENTED_20
+  style: SOLID
+  # Seconds, clamped between 1 and 60.
+  seconds: 3
+  to: victim
+
+death-screen:
+  message: "<red>You died"
+
+messages:
+  prefix: "<gray>[<#f75634>RexKills<gray>] "
+  no-permission: "{prefix}<red>You do not have permission to do that."
+  reload: "{prefix}<green>Configuration reloaded."
+  players-only: "{prefix}<red>Only players can do that."
+  preview-usage: "{prefix}<gray>Usage: <white>/rexkills preview <cause> [killer]"
+  help-header: "{prefix}<white>RexKills"
+  help:
+    - "<gray>/rexkills help <dark_gray>- <white>Show this help"
+    - "<gray>/rexkills reload <dark_gray>- <white>Reload the configuration"
+    - "<gray>/rexkills preview <cause> [killer] <dark_gray>- <white>Preview one death message"
+  unknown-killer: "something"
+  unknown-weapon: ""
+  default: "<gray>{player} died."
+  causes:
+    CONTACT: "<gray>{player} was pricked to death."
+    ENTITY_ATTACK: "<gray>{player} was slain by <white>{killer}</white><gray>."
+    ENTITY_SWEEP_ATTACK: "<gray>{player} was slain by <white>{killer}</white><gray>."
+    PROJECTILE: "<gray>{player} was shot by <white>{killer}</white><gray>."
+    SUFFOCATION: "<gray>{player} suffocated in a wall."
+    FALL: "<gray>{player} fell from a high place."
+    FIRE: "<gray>{player} went up in flames."
+    FIRE_TICK: "<gray>{player} burned to death."
+    MELTING: "<gray>{player} melted."
+    LAVA: "<gray>{player} tried to swim in lava."
+    DROWNING: "<gray>{player} drowned."
+    BLOCK_EXPLOSION: "<gray>{player} blew up."
+    ENTITY_EXPLOSION: "<gray>{player} was blown up by <white>{killer}</white><gray>."
+    VOID: "<gray>{player} fell out of the world."
+    LIGHTNING: "<gray>{player} was struck by lightning."
+    SUICIDE: "<gray>{player} died."
+    STARVATION: "<gray>{player} starved to death."
+    POISON: "<gray>{player} was poisoned."
+    MAGIC: "<gray>{player} was killed by magic."
+    WITHER: "<gray>{player} withered away."
+    FALLING_BLOCK: "<gray>{player} was squashed by a falling block."
+    THORNS: "<gray>{player} was killed by <white>{killer}</white><gray>."
+    DRAGON_BREATH: "<gray>{player} was roasted in dragon breath."
+    CUSTOM: "<gray>{player} died."
+    FLY_INTO_WALL: "<gray>{player} experienced kinetic energy."
+    HOT_FLOOR: "<gray>{player} discovered the floor was lava."
+    CAMPFIRE: "<gray>{player} walked into fire."
+    CRAMMING: "<gray>{player} was squished too much."
+    DRYOUT: "<gray>{player} died from dehydration."
+    FREEZE: "<gray>{player} froze to death."
+    SONIC_BOOM: "<gray>{player} was obliterated by a sonically-charged shriek."
+    KILL: "<gray>{player} was killed."
+    WORLD_BORDER: "<gray>{player} left the confines of this world."
