@@ -5,9 +5,12 @@ import me.rexsystems.rexKills.config.ConfigManager;
 import me.rexsystems.rexKills.death.DeathListener;
 import me.rexsystems.rexKills.death.LastDeaths;
 import org.bukkit.command.PluginCommand;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class RexKills extends JavaPlugin {
+
+    private static final int BSTATS_PLUGIN_ID = 35263;
 
     private ConfigManager configManager;
     private LastDeaths lastDeaths;
@@ -32,6 +35,7 @@ public final class RexKills extends JavaPlugin {
             getLogger().info("PlaceholderAPI expansion registered.");
         }
 
+        new Metrics(this, BSTATS_PLUGIN_ID);
         getLogger().info("RexKills enabled.");
     }
 
