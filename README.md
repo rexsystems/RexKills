@@ -44,7 +44,7 @@ Aliases: `/rxk`, `/kills`
 
 The pages in [docs/](docs/index.md) drop into a Starlight site at `src/content/docs/rexkills/`. Paste `docs/sidebar.mjs` into the site sidebar.
 
-Full docs: [https://rexsystems.me/docs/rexkills](https://rexsystems.me/docs/rexkills)
+Full docs: [https://docs.rexsystems.me/rexkills/](https://docs.rexsystems.me/rexkills/)
 
 ## License
 

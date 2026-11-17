@@ -46,4 +46,4 @@ These reset when the server restarts.
 
 Inside `config.yml`, death lines use `{player}`, `{killer}`, `{weapon}`, `{cause}`, `{world}`, `{x}`, `{y}`, and `{z}`.
 
-Documentation: https://rexsystems.me/docs/rexkills
+Documentation: https://docs.rexsystems.me/rexkills/
